@@ -1,174 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Dilsher Grewal | Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f5f7fa;
-            color: #333;
-        }
-
-        header {
-            background: #0a66c2;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        header p {
-            margin: 5px 0;
-            font-size: 1.2em;
-        }
-
-        nav {
-            text-align: center;
-            background: white;
-            padding: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #0a66c2;
-            font-weight: bold;
-        }
-
-        section {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        h2 {
-            border-bottom: 2px solid #0a66c2;
-            padding-bottom: 5px;
-        }
-
-        .card {
-            background: white;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-        }
-
-        .skills span {
-            display: inline-block;
-            background: #0a66c2;
-            color: white;
-            padding: 5px 10px;
-            margin: 5px;
-            border-radius: 20px;
-            font-size: 0.9em;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #0a66c2;
-            color: white;
-        }
-
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 1.8em;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Dilsher Grewal | DevOps Engineer</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<header>
-    <h1>Your Full Name</h1>
-    <p>Your Job Title | Your Specialization</p>
-    <p>Email: your@email.com | Phone: +1234567890</p>
-    <p>
-        <a href="https://github.com/yourusername" target="_blank" style="color:white;">GitHub</a> |
-    </p>
-</header>
-
-<nav>
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="logo">Dilsher Grewal</div>
+    <ul>
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="blog.html">Blog</a></li>
+    </ul>
 </nav>
 
-<section id="about">
-    <h2>About Me</h2>
-    <div class="card">
+<!-- Profile Header -->
+<section class="profile-header">
+
+    <img src="images/profile.jpg" class="profile-pic">
+
+    <div class="profile-info">
+        <h1>Dilsher Grewal</h1>
+        <h3>DevOps / Site Reliability Engineer</h3>
         <p>
-            Paste your professional summary here. Keep it 3–5 lines.
+        DevOps engineer with 5+ years of experience building and maintaining
+        scalable cloud infrastructure and production environments.
         </p>
-    </div>
-</section>
 
-<section id="experience">
-    <h2>Experience</h2>
-
-    <div class="card">
-        <h3>Job Title — Company Name</h3>
-        <p><em>Start Date – End Date</em></p>
-        <ul>
-            <li>Achievement or responsibility</li>
-            <li>Achievement with measurable impact</li>
-            <li>Tools/technologies used</li>
-        </ul>
+        <!-- <div class="links">
+            <a href="https://github.com/">GitHub</a>
+            <a href="https://linkedin.com/">LinkedIn</a>
+        </div> -->
     </div>
 
 </section>
 
-<section id="projects">
-    <h2>Projects</h2>
+<!-- About -->
+<section class="section">
+<h2>About</h2>
 
-    <div class="card">
-        <h3>Project Name</h3>
-        <p>Short description of the project.</p>
-        <p><strong>Tech Used:</strong> HTML, CSS, JavaScript</p>
-        <p>
-            <a href="#">Live Demo</a> | 
-            <a href="#">GitHub Repo</a>
-        </p>
-    </div>
+<p>
+Experienced DevOps and SRE professional specializing in Kubernetes,
+Azure cloud infrastructure, CI/CD pipelines, monitoring and automation.
+Skilled in managing large scale distributed systems and optimizing
+production workloads.
+</p>
 
 </section>
 
-<section id="skills">
-    <h2>Skills</h2>
-    <div class="card skills">
-        <span>Skill 1</span>
-        <span>Skill 2</span>
-        <span>Skill 3</span>
-        <span>Skill 4</span>
-        <span>Skill 5</span>
-    </div>
+
+<!-- Experience -->
+<section class="section">
+<h2>Experience</h2>
+
+<div class="card">
+
+<h3>Accenture</h3>
+<p class="role">Packaged App Development Senior Analyst | 2024 - Present</p>
+
+<ul>
+<li>Maintaining Azure infrastructure for AI data processing applications</li>
+<li>Monitoring using Prometheus, Grafana, Azure Monitor</li>
+<li>Migration of AKS networking to Azure CNI overlay</li>
+<li>SSL/TLS automation using Bash and Azure Key Vault</li>
+<li>Optimized resources saving €44,400 annually</li>
+</ul>
+
+</div>
+
+<div class="card">
+
+<h3>GlobalLogic (Hitachi)</h3>
+<p class="role">Senior Software Engineer | 2022 - 2024</p>
+
+<ul>
+<li>Built Kubernetes clusters using Terraform and Ansible</li>
+<li>Created CI/CD pipelines using Azure DevOps and Jenkins</li>
+<li>Centralized logging using Elasticsearch and Kibana</li>
+<li>Automated security scans using Python and Black Duck</li>
+</ul>
+
+</div>
+
+
+<div class="card">
+
+<h3>Infosys</h3>
+<p class="role">Systems Engineer | 2017 - 2018</p>
+
+<ul>
+<li>Worked on containerized microservices deployment using Docker and Kubernetes</li>
+<li>CI/CD automation using Jenkins pipelines</li>
+</ul>
+
+</div>
+
 </section>
 
-<section id="education">
-    <h2>Education</h2>
-    <div class="card">
-        <h3>Degree Name</h3>
-        <p>University Name</p>
-        <p><em>Year – Year</em></p>
-    </div>
+
+<!-- Skills -->
+<section class="section">
+
+<h2>Skills</h2>
+
+<div class="skills">
+
+<span>Kubernetes</span>
+<span>Azure</span>
+<span>Terraform</span>
+<span>Ansible</span>
+<span>Docker</span>
+<span>CI/CD</span>
+<span>Prometheus</span>
+<span>Grafana</span>
+<span>Kafka</span>
+<span>RabbitMQ</span>
+<span>Python</span>
+<span>Bash</span>
+<span>Git</span>
+
+</div>
+
+</section>
+
+
+<!-- Education -->
+
+<section class="section">
+
+<h2>Education</h2>
+
+<div class="card">
+<h3>Bachelor of Engineering - Computer Science</h3>
+<p>Chitkara University | 2017</p>
+</div>
+
+</section>
+
+
+<!-- Certifications -->
+
+<section class="section">
+
+<h2>Certifications</h2>
+
+<ul>
+<li>Terraform Associate</li>
+<li>Azure Administrator (AZ-104)</li>
+<li>Azure AI Fundamentals (AI-900)</li>
+<li>GitHub Copilot Certified</li>
+<li>Certified Kubernetes Administrator (In Progress)</li>
+</ul>
+
 </section>
 
 <footer>
-    © 2026 Dilsher Grewal | Built with GitHub Pages
+
+<p>© 2026 Dilsher Grewal</p>
+
 </footer>
 
 </body>
