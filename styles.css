@@ -1,0 +1,88 @@
+body{
+font-family: Arial;
+margin:0;
+background:#f3f2ef;
+}
+
+/* Navbar */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+background:#0a66c2;
+color:white;
+padding:15px 40px;
+}
+
+.navbar ul{
+list-style:none;
+display:flex;
+gap:30px;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* Profile Header */
+
+.profile-header{
+display:flex;
+gap:30px;
+padding:40px;
+background:white;
+margin:30px;
+border-radius:8px;
+}
+
+.profile-pic{
+width:150px;
+height:150px;
+border-radius:50%;
+object-fit:cover;
+}
+
+/* Sections */
+
+.section{
+background:white;
+margin:30px;
+padding:30px;
+border-radius:8px;
+}
+
+.card{
+background:#fafafa;
+padding:20px;
+margin-top:15px;
+border-radius:6px;
+}
+
+.role{
+color:gray;
+}
+
+/* Skills */
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.skills span{
+background:#e7f3ff;
+padding:8px 14px;
+border-radius:20px;
+font-size:14px;
+}
+
+/* Footer */
+
+footer{
+text-align:center;
+padding:20px;
+color:gray;
+}
