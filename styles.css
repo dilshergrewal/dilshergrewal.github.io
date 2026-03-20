@@ -86,3 +86,29 @@ text-align:center;
 padding:20px;
 color:gray;
 }
+
+/* Blog Cards */
+
+.blog-card{
+    border-bottom:1px solid #ddd;
+    padding:20px 0;
+}
+
+.blog-card h2{
+    margin:0;
+}
+
+.blog-card a{
+    text-decoration:none;
+    color:#0a66c2;
+}
+
+.blog-card a:hover{
+    text-decoration:underline;
+}
+
+.blog-meta{
+    color:gray;
+    font-size:14px;
+    margin:5px 0;
+}
