@@ -112,3 +112,88 @@ color:gray;
     font-size:14px;
     margin:5px 0;
 }
+
+/* ================= BLOG ARTICLE STYLE ================= */
+
+.blog-container{
+    max-width: 720px;
+    margin: 60px auto;
+    padding: 0 20px;
+    background: white;
+}
+
+/* Title */
+.blog-container h1{
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+/* Meta */
+.blog-meta{
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* Body text */
+.blog-container p{
+    font-family: 'Source Serif 4', serif;
+    font-size: 19px;
+    line-height: 1.8;
+    color: #222;
+    margin: 18px 0;
+}
+
+/* Lead paragraph */
+.lead{
+    font-size: 22px;
+    font-weight: 600;
+    color: #111;
+}
+
+/* Drop cap */
+.dropcap::first-letter{
+    font-size: 60px;
+    float: left;
+    line-height: 1;
+    padding-right: 8px;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Headings */
+.blog-container h2{
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    margin-top: 40px;
+}
+
+/* Links */
+.blog-container a{
+    color: #0a66c2;
+    text-decoration: underline;
+}
+
+.blog-container a:hover{
+    color: #004182;
+}
+
+/* Blockquote */
+blockquote{
+    font-style: italic;
+    border-left: 4px solid #ccc;
+    padding-left: 15px;
+    margin: 25px 0;
+    color: #555;
+}
+
+/* Lists */
+.blog-container ul{
+    padding-left: 20px;
+}
+
+.blog-container li{
+    margin-bottom: 10px;
+    font-size: 18px;
+}
