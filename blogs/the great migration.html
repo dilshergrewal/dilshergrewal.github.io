@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>AKS Networking Deep Dive</title>
+<title>The Great Migration</title>
 <link rel="stylesheet" href="../styles.css">
+    
+<!-- Google Font for editorial look -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -16,18 +19,18 @@
     </ul>
 </nav>
 
-<section class="section">
+<article class="blog-container">
     <h1>The Great Migration</h1>
     <p class="blog-meta">March 2026 • 5 min read</p>
 
-    <p>
+    <p class="lead">
         Ever since the inevitable news from SIG network came in regarding the discontinuing
 the support for Ingress-nginx in March 2026, the infrastructure teams have been in a fix.
 More than 60% of the companies around the world use (or were using) Ingress-nginx in
 their infrastructure.
     </p>
 
-    <p>
+    <p class="dropcap">
         This time-tested tool has been a staple in technical architecture designs. Albeit robust, it
 faced challenges of insufficient support from the community to maintain it and its
 annotation based customized features led to its limitations. Moving past ingress-nginx,
@@ -51,21 +54,21 @@ than the one through “Go”.
     </p>
 
     <p>
-      The command go install github.com/kubernetes-sigs/ingress2gateway@v0.5.0 did not
+      The command <i>go install github.com/kubernetes-sigs/ingress2gateway@v0.5.0</i> did not
 always install the bin folder containing the ingress2gateway binary, necessary for
 running the print command. The main purpose of ingress2gateway tool is to
 automatically migrate your existing ingress-nginx resources into gateway resources
 through the print command. Hence, I overcame the first barrier through
-https://github.com/kubernetes-sigs/ingress2gateway/tree/v0.5.0?tab=readme-ov-
-file#build-from-source
+<a href="https://github.com/kubernetes-sigs/ingress2gateway/tree/v0.5.0?tab=readme-ov-
+file#build-from-source" target="_blank">Build From Source</a>
     </p>
 
     <p>
       Second and the most time consuming was the command below:
-./ingress2gateway print --providers=ingress-nginx
+<i>./ingress2gateway print --providers=ingress-nginx</i>
     </p>
     <p>
-Even though the official Envoy documentation mentions just ./ingress2gateway print ,
+Even though the official Envoy documentation mentions just <i>./ingress2gateway print</i> ,
 the github README helps here of letting us know the various flags, supported
 ingresses. However, even with the providers command, it showed no resources in the
 namespace. The fact that I could see the various nginx ingresses in the cluster puzzled
@@ -73,25 +76,25 @@ me.
     </p>
 
     <p>
-      Only after going through the issues on their repo, I found helm installed ingress-nginx
-controllers can&#39;t be used. · Issue #264 · kubernetes-sigs/ingress2gateway
+      Only after going through the issues on their repo, I found <a href="https://github.com/kubernetes-sigs/ingress2gateway/issues/264" 
+    target="_blank">helm installed ingress-nginx
+controllers can&#39;t be used. · Issue #264 · kubernetes-sigs/ingress2gateway</a>
 This was a similar issue which I was facing. My Ingress-nginx was installed through
 
 helm as well. Although the major takeaway here was the fact that using
-providers=ingress-nginx defaulted to the Ingress Class name as nginx. Therefore, the
-provider documentation ingress2gateway/pkg/i2gw/providers/ingressnginx/README.md
-at main · kubernetes-sigs/ingress2gateway · GitHub listed the command which can use
+providers=ingress-nginx defaulted to the Ingress Class name as nginx. Therefore, <a href="https://github.com/kubernetes-sigs/ingress2gateway/blob/main/pkg/i2gw/providers/ingressnginx/README.md" target="_blank">the
+provider documentation</a> listed the command which can use
 custom flag for Ingress Classes.
-use --ingress-nginx-ingress-class=&lt;Ingress-Class-Name&gt;
+use <em>--ingress-nginx-ingress-class=&lt;Ingress-Class-Name&gt;</em>
     </p>
 
     <p>
       Please note, as mentioned in the issue #264 above, this custom flag option has not
-been shipped yet to the v0.5 release, therefore either use the main branch of 0.5 (go
-install github.com/kubernetes-sigs/ingress2gateway@main) or the latest v1.0.
+been shipped yet to the v0.5 release, therefore either use the main branch of 0.5 (<i>go
+install github.com/kubernetes-sigs/ingress2gateway@main</i>) or the latest v1.0.
     </p>
 
-</section>
+</article>
 
 </body>
 </html>
