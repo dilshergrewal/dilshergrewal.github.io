@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AKS Networking Deep Dive</title>
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo"></div>
+    <ul>
+        <li><a href="../index.html">Homepage</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../blog.html">Blog</a></li>
+    </ul>
+</nav>
+
+<section class="section">
+    <h1>The Great Migration</h1>
+    <p class="blog-meta">March 2026 • 5 min read</p>
+
+    <p>
+        Ever since the inevitable news from SIG network came in regarding the discontinuing
+the support for Ingress-nginx in March 2026, the infrastructure teams have been in a fix.
+More than 60% of the companies around the world use (or were using) Ingress-nginx in
+their infrastructure.
+    </p>
+
+    <p>
+        This time-tested tool has been a staple in technical architecture designs. Albeit robust, it
+faced challenges of insufficient support from the community to maintain it and its
+annotation based customized features led to its limitations. Moving past ingress-nginx,
+the Kubernetes SIG Network has promoted Gateway API as its replacement. This
+powerful tool overcomes its predecessors’ limitations with flexible features, extensibility
+and security characteristics such as Personas.
+    </p>
+
+    <p>
+      After exploring multiple ingress tool options in the market, the decision was made to go
+ahead with Envoy Gateway. It uses the Kubernetes Gateway API under the hood.
+However, going through their documentation led me to a roadblock with enough room
+for improvement.
+    </p>
+
+    <p>
+      The first blocker was the prerequisite tools. This mainly consisted of quick start
+installations and other requisite tools such as ingress2gateway. Though not directly
+mentioned on their website, the installation through “Build from Source” worked better
+than the one through “Go”.
+    </p>
+
+    <p>
+      The command go install github.com/kubernetes-sigs/ingress2gateway@v0.5.0 did not
+always install the bin folder containing the ingress2gateway binary, necessary for
+running the print command. The main purpose of ingress2gateway tool is to
+automatically migrate your existing ingress-nginx resources into gateway resources
+through the print command. Hence, I overcame the first barrier through
+https://github.com/kubernetes-sigs/ingress2gateway/tree/v0.5.0?tab=readme-ov-
+file#build-from-source
+    </p>
+
+    <p>
+      Second and the most time consuming was the command below:
+./ingress2gateway print --providers=ingress-nginx
+    </p>
+    <p>
+Even though the official Envoy documentation mentions just ./ingress2gateway print ,
+the github README helps here of letting us know the various flags, supported
+ingresses. However, even with the providers command, it showed no resources in the
+namespace. The fact that I could see the various nginx ingresses in the cluster puzzled
+me.
+    </p>
+
+    <p>
+      Only after going through the issues on their repo, I found helm installed ingress-nginx
+controllers can&#39;t be used. · Issue #264 · kubernetes-sigs/ingress2gateway
+This was a similar issue which I was facing. My Ingress-nginx was installed through
+
+helm as well. Although the major takeaway here was the fact that using
+providers=ingress-nginx defaulted to the Ingress Class name as nginx. Therefore, the
+provider documentation ingress2gateway/pkg/i2gw/providers/ingressnginx/README.md
+at main · kubernetes-sigs/ingress2gateway · GitHub listed the command which can use
+custom flag for Ingress Classes.
+use --ingress-nginx-ingress-class=&lt;Ingress-Class-Name&gt;
+    </p>
+
+    <p>
+      Please note, as mentioned in the issue #264 above, this custom flag option has not
+been shipped yet to the v0.5 release, therefore either use the main branch of 0.5 (go
+install github.com/kubernetes-sigs/ingress2gateway@main) or the latest v1.0.
+    </p>
+
+</section>
+
+</body>
+</html>
